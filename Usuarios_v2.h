@@ -47,10 +47,14 @@ class Alumno: public Usuario {
         return ID;
         }
         
-        void Asigna_Horario();
+        void Asignar_Horario();
         void Mostrar();
         void Mostrar_H();
 };
+
+void Alumno::Asignar_Horario(){
+    Horario = " Clase1:Lunes-Miercoles 2:30-5:00, Clase2: Martes-Jueves 11:00-3:00, Clase3: Lunes-Viernes 11:00-1:00";
+}
 
 //Funciónes para mostrar los datos del usuario
 void Alumno::Mostrar(){
@@ -83,6 +87,10 @@ class Profesor: public Usuario {
         void Mostrar();
         void Mostrar_H();
 };
+
+void Profesor::Asignar_Horario(){
+    Horario = " Clase1:Lunes-Martes 11:00-3:00, Clase3: Jueves-Viernes 11:00-1:00";
+}
 
 //Funciónes para mostrar los datos del usuario
 void Profesor::Mostrar(){
