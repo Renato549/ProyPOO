@@ -26,15 +26,26 @@ class Sistema{
 };
 
 
+void Sistema::Imp_Horario(string Clase){
 
+    for(int a = 0; a < N_Us; a++){
+        if(ap[a] -> get_Tipo() == Clase)
+            ap[N_Us] -> Mostrar_H();
+    }
+
+}
 void Sistema::agregar_UProfesor(string nombre, int ID){
     ap[N_Us] = new Profesor(nombre, ID); 
     N_Us++;
+    Profesor.Asignar_Horario();
+    Sistema.Imp_Horario("Profesor");
 }
 
 void Sistema::agregar_UAlumno(string nombre, int ID){
     ap[N_Us] = new Profesor(nombre, ID); 
     N_Us++;
+    Alumno.Asignar_Horario();
+    Sistema.Imp_Horario("Alumno");
 }
 
 void Sistema::mostrar_Usuarios(string Clase){
@@ -46,11 +57,4 @@ void Sistema::mostrar_Usuarios(string Clase){
 
 }
 
-void Sistema::Imp_Horario(string Clase){
 
-    for(int a = 0; a < N_Us; a++){
-        if(ap[a] -> get_Tipo() == Clase)
-            ap[N_Us] -> Mostrar_H();
-    }
-
-}
